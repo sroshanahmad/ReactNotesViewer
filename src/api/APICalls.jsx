@@ -6,6 +6,7 @@ export const get = async () => {
     return data
 }
 
+
 export const post = async (data) => {
 
     const response = await fetch(`${baseURL}/notes/`, {
@@ -20,8 +21,8 @@ export const post = async (data) => {
     if(response.ok) return 'Note created !'
 }
 
-export const put = async (id,data) => {
 
+export const put = async (id,data) => {
     const response = await fetch(`${baseURL}/notes/${id}`, {
         method: "PUT",
         body: JSON.stringify({
@@ -34,8 +35,8 @@ export const put = async (id,data) => {
     if(response.ok) return 'Note updated !'
 }
 
-export const deletes = async (id) => {
 
+export const deletes = async (id) => {
     const response = await fetch(`${baseURL}/notes/${id}`, {
         method: 'DELETE'})
     if(response.ok) return 'Note Deleted !'
