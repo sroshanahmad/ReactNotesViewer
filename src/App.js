@@ -19,7 +19,7 @@ function App() {
   
   const loadNotes = async () => {
     const data = await get()
-    setNotes(data.notes)
+    setNotes(data)
   }
 
   const trigerToggleUpdate = () => {

@@ -5,9 +5,16 @@ export function Note({id,data,date,setNote,trigerToggleUpdate}) {
     
     const displayDate = date_string => {
 
-        let [day,date_and_month] = date_string.split(',')
-        let date = date_and_month.split(' ')[1]
-        let month = date_and_month.split(' ')[2]
+        let days_of_week = ["Sun", "Mon", "Tues", "Wed", "Thurs", "Fri", "Sat"]
+        let  months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+        
+        let event_string = date_string.split('T')[0]
+        let event_date = new Date(event_string)
+
+        let day = days_of_week[event_date.getDay()]
+        let date = event_date.getDate()
+        let month = months[event_date.getMonth()]
+
         return `${day}, ${date} ${month}`
     }
     function enableModal(id,data) {

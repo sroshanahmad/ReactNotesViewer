@@ -79,7 +79,7 @@ button:hover {
 }
 li {
   display: grid;
-  grid-template-columns: 2fr 1fr 1fr 1fr;
+  grid-template-columns: 2fr 1fr 1fr 1fr  1fr;
 }
 .edit-button , .delete-button  {
   text-decoration: none;

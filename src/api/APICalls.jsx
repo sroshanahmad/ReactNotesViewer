@@ -10,9 +10,11 @@ export const post = async (data) => {
 
     const response = await fetch(`${baseURL}/notes/`, {
         method: "POST",
-        body: JSON.stringify(data),
+        body: JSON.stringify({
+            'data': data,
+          }),
         headers: {
-           'Content-Type': 'application/json'
+                "Content-type": "application/json; charset=UTF-8"
         }
     })
     if(response.ok) return 'Note created !'
@@ -35,11 +37,6 @@ export const put = async (id,data) => {
 export const deletes = async (id) => {
 
     const response = await fetch(`${baseURL}/notes/${id}`, {
-        method: 'DELETE',
-        header: {
-           'Accept' : 'application/json',
-           'Content-Type' : 'application/json',
-          }
-        })
+        method: 'DELETE'})
     if(response.ok) return 'Note Deleted !'
 }
